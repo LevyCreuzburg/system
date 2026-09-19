@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070a0f">
+  <meta name="description" content="NØVA System — futuristic cyber dashboard">
+  <title>NØVA // SYSTEM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+  <div class="boot-screen" id="bootScreen" aria-live="polite">
+    <div class="boot-inner">
+      <div class="boot-mark">N<span>Ø</span>VA</div>
+      <div class="boot-line"><span id="bootLabel">INITIALIZING CORE</span><span id="bootPercent">00%</span></div>
+      <div class="boot-track"><i id="bootProgress"></i></div>
+      <div class="boot-meta"><span>SECURE BOOT v4.7.2</span><span>NODE: 07-ALPHA</span></div>
+    </div>
+  </div>
+
+  <main class="shell" id="app" aria-hidden="true">
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand">N<span>Ø</span>VA <small>// SYSTEM</small></div>
+        <div class="breadcrumb"><span class="signal-dot"></span> NODE 07 <b>/</b> COMMAND CENTER</div>
+      </div>
+      <div class="top-actions">
+        <div class="status-pill" id="statusPill"><span class="status-dot"></span><span id="statusText">SYSTEM ONLINE</span></div>
+        <button class="icon-btn" id="themeBtn" aria-label="Theme wechseln" title="Theme wechseln">◐</button>
+        <button class="icon-btn" id="soundBtn" aria-label="Sound umschalten" title="Sound umschalten">⌁</button>
+        <button class="icon-btn" id="fullscreenBtn" aria-label="Vollbild" title="Vollbild">⛶</button>
+      </div>
+    </header>
+
+    <section class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse"></span> LIVE OPERATIONS INTERFACE</p>
+        <h1>Everything<br><em>is connected.</em></h1>
+        <p class="lede">A quiet view into the machine. Monitor your network, inspect the signal and stay ahead of the noise.</p>
+        <div class="hero-meta"><span>ENCRYPTION <b>AES-256</b></span><span>LATENCY <b id="latency">18ms</b></span><span>UPTIME <b id="heroUptime">00:00:00</b></span></div>
+      </div>
+      <div class="orb-card">
+        <div class="orb-grid"></div><div class="orb-glow"></div>
+        <div class="orb orbit-a"></div><div class="orb orbit-b"></div><div class="orb-core"><span>07</span></div>
+        <div class="orb-label label-a">SIGNAL<br><b>STABLE</b></div><div class="orb-label label-b">SECTOR<br><b>EU / 04</b></div>
+        <div class="orb-coordinate">52°31' N<br>13°24' E</div>
+      </div>
+    </section>
+
+    <section class="metric-grid" aria-label="System metrics">
+      <article class="metric-card accent-cyan" data-metric="cpu">
+        <div class="card-head"><span class="card-index">01 / PROCESSOR</span><span class="mini-spark">⌁</span></div>
+        <div class="metric-row"><div><span class="metric-label">CPU LOAD</span><strong><span class="metric-value">72</span><sup>%</sup></strong></div><span class="metric-state">NOMINAL</span></div>
+        <div class="bar"><i></i></div><div class="card-foot"><span>THREADS 08</span><span>TEMP <b class="temp">48°</b></span></div>
+      </article>
+      <article class="metric-card accent-violet" data-metric="memory">
+        <div class="card-head"><span class="card-index">02 / MEMORY</span><span class="mini-spark">⌁</span></div>
+        <div class="metric-row"><div><span class="metric-label">MEMORY USED</span><strong><span class="metric-value">51</span><sup>%</sup></strong></div><span class="metric-state">STABLE</span></div>
+        <div class="bar"><i></i></div><div class="card-foot"><span>16.4 / 32 GB</span><span>CACHE <b>09%</b></span></div>
+      </article>
+      <article class="metric-card accent-lime" data-metric="network">
+        <div class="card-head"><span class="card-index">03 / NETWORK</span><span class="mini-spark">⌁</span></div>
+        <div class="metric-row"><div><span class="metric-label">NETWORK LOAD</span><strong><span class="metric-value">83</span><sup>%</sup></strong></div><span class="metric-state">SECURE</span></div>
+        <div class="bar"><i></i></div><div class="card-foot"><span>↓ 2.4 GB/s</span><span>↑ 1.1 GB/s</span></div>
+      </article>
+    </section>
+
+    <section class="lower-grid">
+      <article class="panel activity-panel">
+        <div class="panel-head"><div><span class="panel-kicker">TELEMETRY / 30 MIN</span><h2>Signal activity</h2></div><span class="live-tag"><i></i> LIVE</span></div>
+        <div class="chart-wrap"><div class="y-labels"><span>100</span><span>50</span><span>0</span></div><svg class="chart" viewBox="0 0 700 190" preserveAspectRatio="none" aria-label="Signal activity chart"><defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8ff5a" stop-opacity=".24"/><stop offset="1" stop-color="#b8ff5a" stop-opacity="0"/></linearGradient></defs><path class="gridline" d="M0 20H700 M0 95H700 M0 170H700"/><path class="area" d="M0 145 L25 135 L50 142 L75 110 L100 122 L125 88 L150 105 L175 84 L200 100 L225 61 L250 77 L275 54 L300 79 L325 42 L350 66 L375 55 L400 80 L425 48 L450 56 L475 34 L500 63 L525 47 L550 71 L575 44 L600 52 L625 27 L650 42 L675 22 L700 31 L700 190 L0 190 Z"/><path class="line" d="M0 145 L25 135 L50 142 L75 110 L100 122 L125 88 L150 105 L175 84 L200 100 L225 61 L250 77 L275 54 L300 79 L325 42 L350 66 L375 55 L400 80 L425 48 L450 56 L475 34 L500 63 L525 47 L550 71 L575 44 L600 52 L625 27 L650 42 L675 22 L700 31"/><circle cx="700" cy="31" r="4" class="chart-point"/></svg></div><div class="x-labels"><span>00:00</span><span>10:00</span><span>20:00</span><span>NOW</span></div>
+      </article>
+      <article class="panel clock-panel"><div class="panel-head"><div><span class="panel-kicker">LOCAL TIME / CEST</span><h2>System clock</h2></div><span class="clock-icon">◷</span></div><div class="big-clock" id="clock">00:00<span>:00</span></div><div class="date-row"><span id="date">MONDAY, 01 JAN 2026</span><span>24H FORMAT</span></div><div class="clock-divider"></div><div class="uptime-row"><span>SESSION UPTIME</span><strong id="uptime">00:00:00</strong></div></article>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="panel log-panel"><div class="panel-head"><div><span class="panel-kicker">EVENT STREAM / SECURE</span><h2>System log</h2></div><button class="text-btn" id="clearLogs">CLEAR <span>×</span></button></div><div class="logs" id="logs" aria-live="polite"></div></article>
+      <article class="panel terminal-panel"><div class="panel-head"><div><span class="panel-kicker">LOCAL CONSOLE</span><h2>Terminal</h2></div><span class="terminal-code">TTY-07</span></div><div class="terminal-output" id="terminalOutput"><p><i>nova@system</i>:~$ status</p><p class="success">✓ all systems operational</p><p><i>nova@system</i>:~$ <span class="cursor"></span></p></div><form id="terminalForm"><span>›</span><input id="terminalInput" autocomplete="off" spellcheck="false" aria-label="Terminal command" placeholder="type a command..." /></form></article>
+    </section>
+    <footer><span>NØVA SYSTEMS © 2026</span><span>BUILD 4.7.2 / ALL SYSTEMS NOMINAL</span><span>PRESS <b>H</b> FOR HELP</span></footer>
+  </main>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
